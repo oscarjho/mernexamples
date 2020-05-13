@@ -18,11 +18,6 @@ mongoose
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
 
-// @route   GET /
-// @desc    /
-// @access  Public
-app.get('/', (req, res) => res.json({ msg: 'Mernstack backend' }));
-
 //USE ROUTES
 app.use('/api/Items', items);
 
