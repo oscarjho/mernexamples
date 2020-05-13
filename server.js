@@ -1,6 +1,5 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
 // DB Config
 const db = require('./config/database').mongoURI
 //DECLARE ROUTES
@@ -8,9 +7,8 @@ const items = require('./routes/api/items');
 const path = require('path');
 
 const app = express();
-
-// Bodyparser Middleware
-app.use(bodyParser.json());
+//Express body parser
+app.use(express.json());
 
 
 // Connect to MongoDB
