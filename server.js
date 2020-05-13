@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 // DB Config
-const db = require('./config/database').mongoURI
+const db = require('./config/database').mongoURI;
 //DECLARE ROUTES
 const items = require('./routes/api/items');
 const path = require('path');
