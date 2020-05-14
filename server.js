@@ -10,7 +10,6 @@ const app = express();
 //Express body parser
 app.use(express.json());
 
-
 // Connect to MongoDB
 mongoose.set('useNewUrlParser', true);
 mongoose
@@ -24,14 +23,12 @@ app.use('/api/Items', items);
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
   // Set static folder
-  //old -> app.use(express.static('client/build'));
-  app.use(express.static(path.join(__dirname, '/client/build')));
+  app.use(express.static('client/build'));
 
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
-
 
 // Config Port
 const port = process.env.PORT || 5000;
