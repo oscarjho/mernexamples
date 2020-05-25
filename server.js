@@ -4,6 +4,9 @@ const mongoose = require('mongoose');
 const db = require('./config/database').mongoURI;
 //DECLARE ROUTES
 const items = require('./routes/api/items');
+const users = require('./routes/api/users');
+const auth = require('./routes/api/auth');
+//DECLARE PATH
 const path = require('path');
 
 const app = express();
@@ -18,7 +21,9 @@ mongoose
   .catch(err => console.log(err));
 
 //USE ROUTES
-app.use('/api/Items', items);
+app.use('/api/items', items);
+app.use('/api/users', users);
+app.use('/api/auth', auth);
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
